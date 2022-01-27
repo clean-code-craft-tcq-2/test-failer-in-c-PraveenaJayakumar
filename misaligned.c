@@ -1,6 +1,31 @@
 #include <stdio.h>
 #include <assert.h>
 
+enum MajorColor {WHITE, RED, BLACK, YELLOW, VIOLET};
+enum MinorColor {BLUE, ORANGE, GREEN, BROWN, SLATE};
+
+typedef struct {
+    enum MajorColor majorColor;
+    enum MinorColor minorColor;
+} ColorPair;
+
+int GetPairNumberFromColor(const ColorPair* colorPair) {
+    return colorPair->majorColor * numberOfMinorColors +
+            colorPair->minorColor + 1;
+}
+
+void testNumberToPair(int pairNumber,
+    enum MajorColor expectedMajor,
+    enum MinorColor expectedMinor)
+{
+    ColorPair colorPair = GetColorFromPairNumber(pairNumber);
+    char colorPairNames[MAX_COLORPAIR_NAME_CHARS];
+    ColorPairToString(&colorPair, colorPairNames);
+    printf("Got pair %s\n", colorPairNames);
+    assert(colorPair.majorColor == expectedMajor);
+    assert(colorPair.minorColor == expectedMinor);
+}
+
 int printColorMap() {
     const char* majorColor[] = {"White", "Red", "Black", "Yellow", "Violet"};
     const char* minorColor[] = {"Blue", "Orange", "Green", "Brown", "Slate"};
@@ -11,6 +36,7 @@ int printColorMap() {
         }
     }
     return i * j;
+    testNumberToPair(4, WHITE, BROWN);
 }
 
 int main() {
