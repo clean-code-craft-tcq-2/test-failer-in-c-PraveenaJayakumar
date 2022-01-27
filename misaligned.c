@@ -33,10 +33,11 @@ int printColorMap() {
     for(i = 0; i < 5; i++) {
         for(j = 0; j < 5; j++) {
             printf("%d | %s | %s\n", i * 5 + j, majorColor[i], minorColor[i]);
+            testNumberToPair(i * 5 + j, majorColor[i], minorColor[i]);
         }
     }
     return i * j;
-    testNumberToPair(4, WHITE, BROWN);
+    
 }
 
 int main() {
