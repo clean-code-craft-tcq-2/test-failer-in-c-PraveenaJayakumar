@@ -24,12 +24,9 @@ ColorPair GetColorFromPairNumber(int pairNumber) {
     ColorPair color_Pair;
     color_Pair.majorColor = MajorColorNames[(pairNumber / numberOfMinorColors)];
     color_Pair.minorColor = MinorColorNames[(pairNumber % numberOfMinorColors)];
-    return colorPair;
+    return color_Pair;
 }
 
-
-int numberOfMinorColors =
-    sizeof(MinorColorNames) / sizeof(MinorColorNames[0]);
 
 void testNumberToPair(int pairNumber,
     const char* expectedMajor,
