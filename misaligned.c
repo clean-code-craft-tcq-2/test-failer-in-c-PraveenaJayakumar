@@ -19,6 +19,7 @@ int numberOfMajorColors =
 const char* MinorColorNames[] = {
     "Blue", "Orange", "Green", "Brown", "Slate"
 };
+int numberOfMinorColors = sizeof(MinorColorNames) / sizeof(MinorColorNames[0]);
 ColorPair GetColorFromPairNumber(int pairNumber) {
     ColorPair color_Pair;
     color_Pair.majorColor = MajorColorNames[(pairNumber / numberOfMinorColors)];
