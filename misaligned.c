@@ -19,19 +19,18 @@ int numberOfMajorColors =
 const char* MinorColorNames[] = {
     "Blue", "Orange", "Green", "Brown", "Slate"
 };
-
-int numberOfMinorColors =
-    sizeof(MinorColorNames) / sizeof(MinorColorNames[0]);
-
-
-void ColorPairToString(const ColorPair* colorPair, char* buffer) {
-    sprintf(buffer, "%s %s",
-        MajorColorNames[colorPair->majorColor],
-        MinorColorNames[colorPair->minorColor]);
+ColorPair GetColorFromPairNumber(int pairNumber) {
+    ColorPair colorPair;    
+    colorPair.majorColor = 
+        (enum MajorColor)(pairNumber / numberOfMinorColors);
+    colorPair.minorColor =
+        (enum MinorColor)(pairNumber % numberOfMinorColors);
+    return colorPair;
 }
 
 
-
+int numberOfMinorColors =
+    sizeof(MinorColorNames) / sizeof(MinorColorNames[0]);
 
 void testNumberToPair(int pairNumber,
     const char* expectedMajor,
