@@ -20,11 +20,9 @@ const char* MinorColorNames[] = {
     "Blue", "Orange", "Green", "Brown", "Slate"
 };
 ColorPair GetColorFromPairNumber(int pairNumber) {
-    ColorPair colorPair;    
-    colorPair.majorColor = 
-        (enum MajorColor)(pairNumber / numberOfMinorColors);
-    colorPair.minorColor =
-        (enum MinorColor)(pairNumber % numberOfMinorColors);
+    ColorPair color_Pair;
+    color_Pair.majorColor = MajorColorNames[(pairNumber / numberOfMinorColors)];
+    color_Pair.minorColor = MinorColorNames[(pairNumber % numberOfMinorColors)];
     return colorPair;
 }
 
