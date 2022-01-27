@@ -31,21 +31,13 @@ void ColorPairToString(const ColorPair* colorPair, char* buffer) {
 }
 
 
-ColorPair GetColorFromPairNumber(int pairNumber) {
-    ColorPair colorPair;
-    colorPair.majorColor = MajorColorNames[(pairNumber / numberOfMinorColors)];
-    colorPair.minorColor = MinorColorNames[(pairNumber % numberOfMinorColors)];
-    return colorPair;
-}
+
 
 void testNumberToPair(int pairNumber,
     const char* expectedMajor,
     const char* expectedMinor)
 {
-    ColorPair colorPair = GetColorFromPairNumber(pairNumber);
-    char colorPairNames[MAX_COLORPAIR_NAME_CHARS];
-    ColorPairToString(&colorPair, colorPairNames);
-    printf("Got pair %s\n", colorPairNames);
+    ColorPair colorPair = GetColorFromPairNumber(pairNumber);      
     assert(colorPair.majorColor == expectedMajor);
     assert(colorPair.minorColor == expectedMinor);
 }
