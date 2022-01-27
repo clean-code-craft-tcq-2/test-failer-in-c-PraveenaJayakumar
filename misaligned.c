@@ -42,8 +42,8 @@ ColorPair GetColorFromPairNumber(int pairNumber) {
 }
 
 void testNumberToPair(int pairNumber,
-    enum MajorColor expectedMajor,
-    enum MinorColor expectedMinor)
+    const char* expectedMajor,
+    const char* expectedMinor)
 {
     ColorPair colorPair = GetColorFromPairNumber(pairNumber);
     char colorPairNames[MAX_COLORPAIR_NAME_CHARS];
@@ -60,7 +60,7 @@ int printColorMap() {
     for(i = 0; i < 5; i++) {
         for(j = 0; j < 5; j++) {
             printf("%d | %s | %s\n", i * 5 + j, majorColor[i], minorColor[i]);
-            testNumberToPair(i * 5 + j, i, j);
+            testNumberToPair(i * 5 + j,  majorColor[i], minorColor[i]);
         }
     }
     return i * j;
