@@ -1,25 +1,10 @@
 #include <stdio.h>
 #include <assert.h>
+#include <Color_Pair_Basic_Info.h>
 
 enum MajorColor {WHITE, RED, BLACK, YELLOW, VIOLET};
 enum MinorColor {BLUE, ORANGE, GREEN, BROWN, SLATE};
 
-const int MAX_COLORPAIR_NAME_CHARS = 16;
-
-typedef struct {
-    const char* majorColor;
-    const char* minorColor;
-} ColorPair;
-
-const char* MajorColorNames[] = {
-    "White", "Red", "Black", "Yellow", "Violet"
-};
-int numberOfMajorColors =
-    sizeof(MajorColorNames) / sizeof(MajorColorNames[0]);
-const char* MinorColorNames[] = {
-    "Blue", "Orange", "Green", "Brown", "Slate"
-};
-int numberOfMinorColors = sizeof(MinorColorNames) / sizeof(MinorColorNames[0]);
 ColorPair GetColorFromPairNumber(int pairNumber) {
     ColorPair color_Pair;
     color_Pair.majorColor = MajorColorNames[(pairNumber / numberOfMinorColors)];
