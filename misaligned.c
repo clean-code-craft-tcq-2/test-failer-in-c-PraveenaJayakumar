@@ -41,6 +41,7 @@ void printColorMap() {
 int main() {
     printColorMap();
     testNumberToPair(0,  "White", "Blue");
+    testNumberToPair(1,  "White", "Blue");
     printf("All is well (maybe!)\n");
     return 0;
 }
