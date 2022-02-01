@@ -30,8 +30,8 @@ void printColorMap() {
     int i = 0, j = 0;
     for(i = 0; i < 5; i++) {
         for(j = 0; j < 5; j++) {
-            printf("%d | %s | %s\n", colorCode_order , majorColor[i], minorColor[i]);
-            testNumberToPair(colorCode_order,  majorColor[i], minorColor[i]);
+            printf("%d | %s | %s\n", colorCode_order , majorColor[i], minorColor[j]);
+            testNumberToPair(colorCode_order,  majorColor[i], minorColor[j]);
             colorCode_order++;
         }
     }
