@@ -24,7 +24,7 @@ void testNumberToPair(int pairNumber,
     assert(colorPair.minorColor == expectedMinor);
 }
 
-int printColorMap() {
+void printColorMap() {
     const char* majorColor[] = {"White", "Red", "Black", "Yellow", "Violet"};
     const char* minorColor[] = {"Blue", "Orange", "Green", "Brown", "Slate"};
     int i = 0, j = 0;
@@ -35,12 +35,12 @@ int printColorMap() {
             colorCode_order++;
         }
     }
-    return i * j;
+   
     
 }
 
 int main() {
-    int result = printColorMap();
+    printColorMap();
     printf("All is well (maybe!)\n");
     return 0;
 }
