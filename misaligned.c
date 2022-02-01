@@ -5,7 +5,7 @@
 enum MajorColor {WHITE, RED, BLACK, YELLOW, VIOLET};
 enum MinorColor {BLUE, ORANGE, GREEN, BROWN, SLATE};
 
-unsigned int colorCode_order = 1;
+unsigned int colorCode_order = 0;
 
 ColorPair GetColorFromPairNumber(int pairNumber) {
     ColorPair color_Pair;
