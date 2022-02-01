@@ -5,6 +5,8 @@
 enum MajorColor {WHITE, RED, BLACK, YELLOW, VIOLET};
 enum MinorColor {BLUE, ORANGE, GREEN, BROWN, SLATE};
 
+unsigned int colorCode_order = 1;
+
 ColorPair GetColorFromPairNumber(int pairNumber) {
     ColorPair color_Pair;
     color_Pair.majorColor = MajorColorNames[(pairNumber / numberOfMinorColors)];
@@ -28,8 +30,9 @@ int printColorMap() {
     int i = 0, j = 0;
     for(i = 0; i < 5; i++) {
         for(j = 0; j < 5; j++) {
-            printf("%d | %s | %s\n", i * 5 + j, majorColor[i], minorColor[i]);
+            printf("%d | %s | %s\n", colorCode_order , majorColor[i], minorColor[i]);
             testNumberToPair(i * 5 + j,  majorColor[i], minorColor[i]);
+            colorCode_order++;
         }
     }
     return i * j;
@@ -38,7 +41,6 @@ int printColorMap() {
 
 int main() {
     int result = printColorMap();
-    assert(result == 25);
     printf("All is well (maybe!)\n");
     return 0;
 }
